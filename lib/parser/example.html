@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://raw.github.com/rintiantta/rint.js.helper/master/lib/helper.js"></script>
+    <script src="parser.js"></script>
+    <script type="text/rvn">
+        #Configure:
+            accel: 1
+            width: 600
+            height: 400
+        #Subject:
+            name: "rintiantta"
+            commit
+            test: true
+        #BGM: 23
+        #Character: "rint"
+        #Say: "Hello World"
+        #Wait
+        #Quake:
+            time: 300
+            hmax: 5
+            vmax: 5
+    </script>
+    <script>
+        var output = rint_visual_novel_parser(document.querySelector('[type="text/rvn"]').textContent)
+        output.map(function (item) {
+            return rint_to_eval_string(item)
+        }).forEach(function (item) {
+            console.log(item)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
